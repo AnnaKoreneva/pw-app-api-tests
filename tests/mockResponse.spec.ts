@@ -21,7 +21,7 @@ test.beforeEach("go to the web-portal", async ({ page }) => {
 
   await page.waitForTimeout(500);
 
-  await page.goto("https://conduit.bondaracademy.com/");
+  await page.goto("/");
 });
 
 test("get started link", async ({ page }) => {

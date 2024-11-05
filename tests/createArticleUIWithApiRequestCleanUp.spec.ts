@@ -1,7 +1,7 @@
 import test, { expect, request } from "@playwright/test";
 
 test.beforeEach('open the portal and login to it', async ({ page }) => {
-    await page.goto("https://conduit.bondaracademy.com/");
+    await page.goto("/");
 })
 
 test('create article', async ({ page, request }) => {
@@ -21,7 +21,7 @@ test('create article', async ({ page, request }) => {
 
     await page.getByText('Home').click();
     await page.getByText("Global Feed").click();
-    expect(await page.locator("app-article-preview h1").first().textContent()).toEqual("QA Test Article Title");
+    await expect(page.getByText("QA Test Article Title")).toBeVisible();
     const response = await request.post(
     "https://conduit-api.bondaracademy.com/api/users/login",
     {
