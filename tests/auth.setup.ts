@@ -22,7 +22,7 @@ const isAuthStateRecent = (): boolean => {
 
 setup('authentication', async ({ page }) => {
     if (isAuthStateRecent() == false) {
-        await page.goto("https://conduit.bondaracademy.com/");
+        await page.goto('/');
         await page.getByText("Sign In").click();
         await page.getByPlaceholder("Email").fill("pwtest1409@test.com");
         await page.getByPlaceholder("Password").fill("pwtest1409");

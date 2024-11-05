@@ -3,7 +3,7 @@ import tags from "../data/tags.json";
 import { mockArticle } from '../data/article'
 
 test.beforeEach("go to the web-portal", async ({ page }) => {
-    await page.goto("https://conduit.bondaracademy.com/");
+    await page.goto("/");
 });
 
 test("delete article", async ({ page, request }) => {
