@@ -1,13 +1,9 @@
-import { test, expect, request } from "@playwright/test";
+import { test, expect} from "@playwright/test";
 import tags from "../data/tags.json";
 import { mockArticle } from '../data/article'
 
 test.beforeEach("go to the web-portal", async ({ page }) => {
     await page.goto("https://conduit.bondaracademy.com/");
-    await page.getByText("Sign In").click();
-    await page.getByPlaceholder("Email").fill("pwtest1409@test.com");
-    await page.getByPlaceholder("Password").fill("pwtest1409");
-    await page.getByRole('button', { name: "Sign in" }).click();
 });
 
 test("delete article", async ({ page, request }) => {
